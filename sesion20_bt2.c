@@ -15,6 +15,7 @@ void sellProduct(struct Store st[], int *size);
 void sapXep(struct Store st[], int size, int choice);
 void sapXep(struct Store *st, int size, int choice);
 void editSt(struct Store *st, int *size, int x);
+void showRevenue(int revenue);
 int main(){
 	int x;
 	int revenue =0.0;
@@ -30,8 +31,9 @@ int main(){
         printf("5. Sap xep san pham theo gia\n");
         printf("6. tim kiem san pham\n");
         printf("7. ban san pham\n");
-        printf("8. Thoat\n");
-        printf("Hay chon chuc nang (1-8): ");
+        printf("8. Doanh thu hien tai");
+        printf("9. Thoat\n");
+        printf("Hay chon chuc nang (1-9): ");
         scanf("%d", &choice);
         switch(choice){
         	case 1:
@@ -58,12 +60,15 @@ int main(){
         		sellProduct(st,&size);
         		break;
         	case 8:
-        		printf("Da thoat chuong trinh");
+        		showRevenue(revenue);
         		break;	
+        	case 9:
+        		printf("Da thoat chuong trinh");
+        		break;
         	default:
         		return 0;
 		}
-	}while(choice != 8);
+	}while(choice != 9);
   return 0;
 }
 	void addSt(struct Store st[],int size){
